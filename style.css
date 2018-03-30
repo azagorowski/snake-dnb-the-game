@@ -1,4 +1,9 @@
-canvas{
+canvas {
 	display: block;
 	margin: 0 auto;
-	}
+	margin-top: 80px;
+}
+
+body {
+	background-color: yellow;
+}
