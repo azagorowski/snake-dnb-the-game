@@ -1,7 +1,7 @@
 canvas {
 	display: block;
 	margin: 0 auto;
-	margin-top: 80px;
+	margin-top: 40px;
 }
 
 body {
@@ -10,4 +10,7 @@ body {
 
 h1 {
 	text-align: center;
+	color: #FFFFCC;
+	font-family: "Bungee", cursive;
+	font-size: 48px;
 }
