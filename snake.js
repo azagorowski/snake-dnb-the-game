@@ -136,7 +136,9 @@ function draw(){
     snake.unshift(newHead);
     
     ctx.fillStyle = "red";
-    ctx.font = "42px Georgia one";
+	ctx.shadowColor = "#1a0000";
+	ctx.shadowBlur = 25;
+    ctx.font = "42px Montserrat";
     ctx.fillText("Score: " + score,2*box,1.6*box);
 }
 
