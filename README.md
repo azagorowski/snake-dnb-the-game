@@ -1,7 +1,7 @@
-Snake game with sound effects made in JavaScript based on "Code Explained" tutorial.
+Snake game with sound effects made in JavaScript.
 
-Preview: 
-![alt text](https://raw.githubusercontent.com/azagorowski/snake-dnb-the-game/master/screenshots/ss1.PNG "Preview")
+Preview 1: 
+![alt text](https://raw.githubusercontent.com/azagorowski/snake-dnb-the-game/master/screenshots/ss1.PNG "Preview 1")
 
 Preview 2: 
 ![alt text](https://raw.githubusercontent.com/azagorowski/snake-dnb-the-game/master/screenshots/ss2.PNG "Preview 2")
@@ -16,3 +16,5 @@ Preview 2:
 
 - Arrow keys - controlling the snake
 - R - Refresh
+
+*Based on "Code Explained" tutorial.*
