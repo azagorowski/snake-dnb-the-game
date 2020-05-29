@@ -13,6 +13,9 @@ ground.src = "img/ground.png";
 const foodImg = new Image();
 foodImg.src = "img/food.png";
 
+foodImg.shadowColor = "#1a0000";
+foodImg.shadowBlur = 25;
+
 // Loading audio
 let dead = new Audio();
 let eat = new Audio();
@@ -52,6 +55,10 @@ let d;
 
 document.addEventListener("keydown",direction);
 
+function refreshPage(){
+    window.location.reload();
+} 
+
 function direction(evt){
     let key = evt.keyCode;
     if( key == 37 && d != "RIGHT"){
@@ -66,6 +73,9 @@ function direction(evt){
     }else if(key == 40 && d != "UP"){
         d = "DOWN";
         down.play();
+    }else if(key == 82){
+        d = "r";
+        window.location.reload();
     }
 }
 
@@ -131,15 +141,18 @@ function draw(){
     if(snakeX < box || snakeX > 17 * box || snakeY < 3*box || snakeY > 17*box || collision(newHead,snake)){
         clearInterval(game);
         dead.play();
+		alert("Congratulations ! \r\nYou scored " + score + " points. \r\n \r\nPress \"Ctrl + R\" to Restart the game. \r\nYou can also restart the snake by pressing \"R\" button in-game.");
     }
     
     snake.unshift(newHead);
+	
     
     ctx.fillStyle = "red";
 	ctx.shadowColor = "#1a0000";
 	ctx.shadowBlur = 25;
     ctx.font = "42px Montserrat";
     ctx.fillText("Score: " + score,2*box,1.6*box);
+	
 }
 
 // Gameplay speed
