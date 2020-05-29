@@ -13,9 +13,6 @@ ground.src = "img/ground.png";
 const foodImg = new Image();
 foodImg.src = "img/food.png";
 
-foodImg.shadowColor = "#1a0000";
-foodImg.shadowBlur = 25;
-
 // Loading audio
 let dead = new Audio();
 let eat = new Audio();
@@ -42,8 +39,9 @@ snake[0] = {
 // Creating an apple
 let food = {
     x : Math.floor(Math.random()*17+1) * box,
-    y : Math.floor(Math.random()*15+3) * box
+    y : Math.floor(Math.random()*15+3) * box,
 }
+
 
 // Score
 
@@ -54,10 +52,6 @@ var score = 0;
 let d;
 
 document.addEventListener("keydown",direction);
-
-function refreshPage(){
-    window.location.reload();
-} 
 
 function direction(evt){
     let key = evt.keyCode;
@@ -141,11 +135,13 @@ function draw(){
     if(snakeX < box || snakeX > 17 * box || snakeY < 3*box || snakeY > 17*box || collision(newHead,snake)){
         clearInterval(game);
         dead.play();
-		alert("Congratulations ! \r\nYou scored " + score + " points. \r\n \r\nPress \"Ctrl + R\" to Restart the game. \r\nYou can also restart the snake by pressing \"R\" button in-game.");
-    }
+		setTimeout(function(){
+		alert("Congratulations ! \r\nYou scored " + score + " points. \r\n \r\nPress \"Ctrl + R\" to restart the game. \r\nYou can also restart the snake by pressing \"R\" button in-game.");
+		}, 500);
+	}
+	
     
     snake.unshift(newHead);
-	
     
     ctx.fillStyle = "red";
 	ctx.shadowColor = "#1a0000";
@@ -158,3 +154,12 @@ function draw(){
 // Gameplay speed
 
 var game = setInterval(draw,150);
+
+// Disable scrolling the site by arrows
+
+window.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
