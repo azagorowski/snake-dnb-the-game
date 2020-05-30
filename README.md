@@ -14,7 +14,11 @@ Preview 2:
 
 **Controls**
 
-- Arrow keys - controlling the snake
-- R - Refresh
+Arrow keys - controlling the snake:  
+![alt text](https://raw.githubusercontent.com/azagorowski/snake-dnb-the-game/master/img/arrow_keys.jpg "Arrows")
+
+
+R - Restart the game:  
+![alt text](https://raw.githubusercontent.com/azagorowski/snake-dnb-the-game/master/img/R_button.jpg "Restart")
 
 *Based on "Code Explained" tutorial.*
